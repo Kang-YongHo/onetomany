@@ -1,12 +1,10 @@
-package com.onetomany.modules.comment;
+package com.onetomany.case2.modules.reply;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.onetomany.modules.account.Account;
-import com.onetomany.modules.post.Post;
-import javax.persistence.CascadeType;
+
+import com.onetomany.case2.modules.member.Member;
+import com.onetomany.case2.modules.quest.Quest;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -21,36 +19,31 @@ import org.hibernate.annotations.OnDeleteAction;
 @Entity
 @Getter
 @NoArgsConstructor
-public class Comment {
+public class Reply {
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "comment_id")
     private Long id;
 
+    @Column(nullable = false)
     private String content;
-    @JsonBackReference
-    @JoinColumn(name = "post_id")
-    @ManyToOne
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    private Post post;
 
-    @JsonBackReference
-    @JoinColumn(name = "account_id")
+    @JoinColumn
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
-    private Account account;
+    private Quest quest;
+
+    @JoinColumn
+    @ManyToOne
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private Member member;
 
     @Builder
-    public Comment(Long id, String content, Post post, Account account) {
+    public Reply(Long id, String content, Quest quest, Member member) {
         this.id = id;
         this.content = content;
-        this.post = post;
-        this.account = account;
-    }
-
-
-    public void addPost(Post post){
-        this.post = post;
+        this.quest = quest;
+        this.member = member;
     }
 }

@@ -1,8 +1,8 @@
-package com.onetomany.modules.post;
+package com.onetomany.case1.modules.post;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.onetomany.modules.account.Account;
-import com.onetomany.modules.comment.Comment;
+import com.onetomany.case1.modules.account.Account;
+import com.onetomany.case1.modules.comment.Comment;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.CascadeType;

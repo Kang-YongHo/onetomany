@@ -1,4 +1,4 @@
-package com.onetomany.modules.comment;
+package com.onetomany.case1.modules.post;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -6,10 +6,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class CommentService {
+public class PostService {
 
 
-    private final CommentRepository commentRepository;
+    private final PostRepository postRepository;
 
 
     @Transactional

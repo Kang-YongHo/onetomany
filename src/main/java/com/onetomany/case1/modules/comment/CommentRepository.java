@@ -1,6 +1,5 @@
-package com.onetomany.modules.comment;
+package com.onetomany.case1.modules.comment;
 
-import com.onetomany.modules.comment.Comment;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

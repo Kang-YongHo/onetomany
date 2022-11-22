@@ -1,6 +1,5 @@
-package com.onetomany.modules.account;
+package com.onetomany.case1.modules.account;
 
-import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

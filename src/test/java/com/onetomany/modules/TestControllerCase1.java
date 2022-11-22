@@ -1,21 +1,19 @@
 package com.onetomany.modules;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 
 import com.onetomany.MockMvcTest;
-import com.onetomany.modules.account.Account;
-import com.onetomany.modules.account.AccountRepository;
-import com.onetomany.modules.account.AccountService;
-import com.onetomany.modules.comment.Comment;
-import com.onetomany.modules.comment.CommentRepository;
-import com.onetomany.modules.post.Post;
-import com.onetomany.modules.post.PostRepository;
+import com.onetomany.case1.modules.account.Account;
+import com.onetomany.case1.modules.account.AccountRepository;
+import com.onetomany.case1.modules.account.AccountService;
+import com.onetomany.case1.modules.comment.Comment;
+import com.onetomany.case1.modules.comment.CommentRepository;
+import com.onetomany.case1.modules.post.Post;
+import com.onetomany.case1.modules.post.PostRepository;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -23,7 +21,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.web.servlet.MockMvc;
 
 @MockMvcTest
-class TestControllerTest {
+class TestControllerCase1 {
 
     @Autowired
     AccountRepository accountRepository;

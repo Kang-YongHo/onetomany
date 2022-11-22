@@ -1,4 +1,4 @@
-package com.onetomany.modules.post;
+package com.onetomany.case1.modules.post;
 
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
