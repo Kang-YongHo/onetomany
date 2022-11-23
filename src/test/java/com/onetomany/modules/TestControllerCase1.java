@@ -65,16 +65,25 @@ class TestControllerCase1 {
 
         saveAccount.update(savePost, saveComment);
 //        savePost.addComment(saveComment);
-
-
     }
 
-    @DisplayName("삭제 테스트")
+    @DisplayName("회원 삭제 테스트")
     @Test
-    void create_three_entities() throws Exception {
+    void delete_account_then_remove_childs() {
         accountRepository.deleteById(1L);
 
         assertThat(accountRepository.count()).isEqualTo(0);
+        assertThat(postRepository.count()).isEqualTo(0);
+        assertThat(commentRepository.count()).isEqualTo(0);
+    }
+
+
+    @DisplayName("글 삭제 테스트")
+    @Test
+    void delete_post_then_remove_comment() {
+        postRepository.deleteById(1L);
+
+        assertThat(accountRepository.count()).isEqualTo(1);
         assertThat(postRepository.count()).isEqualTo(0);
         assertThat(commentRepository.count()).isEqualTo(0);
     }
